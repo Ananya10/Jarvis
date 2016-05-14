@@ -29,7 +29,7 @@ public class ResumeAnalysis {
 
 
 
-		String[] types = new String[]{"places_eng","companies_eng","universities"};
+		String[] types = new String[]{"places_eng","companies_eng","universities", "languages", "professions"};
 
 		for (String type: types)
 		{
