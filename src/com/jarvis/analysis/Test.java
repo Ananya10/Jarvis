@@ -29,13 +29,16 @@ public class Test {
 	public static void main(String[] args) throws Exception
 	{
 
-		ResumeAnalysis resumeAnalysis = new ResumeAnalysis();
-		String response = resumeAnalysis.EntityExtraction("C:\\Hackathon\\SampleResume\\Resume.pdf");
+		//ResumeAnalysis resumeAnalysis = new ResumeAnalysis();
+		//String response = resumeAnalysis.EntityExtraction("C:\\Hackathon\\SampleResume\\Resume.pdf");
 		
 		//TestAnalysis testAnalysis = new TestAnalysis();
 		//String response = testAnalysis.Train("C:\\Hackathon\\SampleTrainingData\\Training4.json");
 		
 		//String response = testAnalysis.Predict("C:\\Hackathon\\SampleTrainingData\\Predict.json","PredictionTest13");
+		
+		FeedbackAnalysis feedbackAnalysis = new FeedbackAnalysis();
+		String response = feedbackAnalysis.OCR("C:\\Hackathon\\Feedback1.jpg");
 		
 		System.out.println(response);
 
