@@ -16,12 +16,22 @@
 
 </head>
 <body>
-
+<script type="text/javascript">
+window.onload = function() {
+	$("a[href='${sessionScope.tabID}']").click();
+	};
+</script>
 	<div class="container-fluid">
-		<div class="row" style="background: -webkit-linear-gradient(left, #cccccc, #ebebe0, #000000);">
-			<div class="col-md-12">
-				<img alt="Bootstrap Image Preview"
-					src="images/Logo3.png" height="125px">
+		<div class="row"
+			style="background: -webkit-linear-gradient(left, #cccccc, #ebebe0, #000000);">
+			<div class="col-md-10"
+				style="display: inline-block; vertical-align: middle; float: none;">
+				<img alt="Bootstrap Image Preview" src="images/Logo3.png"
+					height="125px">
+			</div>
+			<div class="col-md-1"
+				style="display: inline-block; vertical-align: middle; float: none;">
+				<label style="color: white;">${sessionScope.userName}</label>
 			</div>
 		</div>
 		<br> <br>
@@ -41,24 +51,17 @@
 							<br> <br>
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-md-4">
-										<span class="label label-default">Label</span>
+									<div class="col-md-2">
+										<a class="btn"
+											href="https://www.dropbox.com/s/pgqrnwgo516xssf/Resume.pdf?dl=0"
+											target="_blank">View Resume »</a>
 									</div>
-									<div class="col-md-4">
-										<span class="label label-default">Label</span>
-									</div>
-									<div class="col-md-4"></div>
 								</div>
+								<br /> <br />
 								<div class="row">
-									<div class="col-md-12">
-										<h2>Heading</h2>
-										<p>Donec id elit non mi porta gravida at eget metus. Fusce
-											dapibus, tellus ac cursus commodo, tortor mauris condimentum
-											nibh, ut fermentum massa justo sit amet risus. Etiam porta
-											sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-										<p>
-											<a class="btn" href="#">View details »</a>
-										</p>
+									<div class="form-group">
+										<label for="comment">Resume Summary:</label>
+										<textarea class="form-control" rows="5" id="comment">${sessionScope.summary}</textarea>
 									</div>
 								</div>
 							</div>
@@ -67,6 +70,52 @@
 						<div class="tab-pane" id="panel-244497">
 
 							<br> <br>
+							<div class="container-fluid">
+
+								<form method="POST" enctype="multipart/form-data"
+									action="prediction.html">
+									<div class="row">
+										<div class="col-md-2">
+											<label for="applicantScore">Applicant Score: </label>
+										</div>
+										<div class="col-md-2">
+											<input type="text" class="form-control" id="applicantScore"
+												name="applicantScore" style="width: 200px;" value=${codingTest.score}>
+										</div>
+										<div class="col-md-2">
+											<button id="button" value="" class="btn btn-default">Get
+												Predictive Rating</button>
+										</div>
+									</div>
+
+									<br /> <br />
+									<div class="row">
+										<div class="col-md-2">
+											<label for="applicantScore">Predictive Rating: </label>
+										</div>
+										<div class="col-md-2">
+										<label id="applicantScore" style="width: 200px;">${codingTest.rating}</label>
+											
+										</div>
+									</div>
+								</form>
+								<br /> <br />
+								<div class="row">
+									<div class="col-md-2">
+										<label for="maxScore">Employees' max score is:</label>
+									</div>
+									<div class="col-md-2">
+										<p id="maxScore">90</p>
+									</div>
+									<div class="col-md-2">
+										<label for="avgScore">Employees' Avg score is:</label>
+									</div>
+									<div class="col-md-2">
+										<p id="avgScore">55</p>
+									</div>
+
+								</div>
+							</div>
 
 						</div>
 
@@ -78,11 +127,13 @@
 								<div class="row">
 									<div class="col-md-12">
 
-										<form role="form">
+										<form method="POST" enctype="multipart/form-data"
+											action="feedback.html">
 											<div class="form-group">
 
-												<label for="exampleInputFile">Employee Test Data</label> <input
-													type="file" id="exampleInputFile" />
+												<label for="exampleInputFile2">Interviewer Feedback
+													Data</label> <input type="file" id="exampleInputFile2"
+													name="exampleInputFile2" />
 
 											</div>
 											<button type="submit" class="btn btn-default">
@@ -96,8 +147,15 @@
 								<div class="row">
 									<div class="col-md-12">
 
-										<h3>Max score is:</h3>
-										<p id="maxScore">89</p>
+										<label>Feedback:</label> <label>${result.text}</label>
+
+									</div>
+
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label>Sentiment:</label> <label style="color: green;">${result.sentiment}</label>
 
 									</div>
 
@@ -106,8 +164,7 @@
 								<div class="row">
 									<div class="col-md-12">
 
-										<h3>Avg score is:</h3>
-										<p id="avgScore">75</p>
+										<label>Score:</label> <label>${result.score}</label>
 
 									</div>
 
@@ -122,8 +179,9 @@
 			</div>
 		</div>
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>

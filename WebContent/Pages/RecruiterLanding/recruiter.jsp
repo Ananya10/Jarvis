@@ -36,9 +36,12 @@
 </script>
 	<div class="container-fluid">
 		<div class="row" style="background: -webkit-linear-gradient(left, #cccccc, #ebebe0, #000000);">
-			<div class="col-md-12">
-				<img alt="Bootstrap Image Preview"
-					src="images/Logo3.png" height="125px">
+			<div class="col-md-10" style="display: inline-block; vertical-align: middle; float: none;">
+				<img alt="Bootstrap Image Preview" src="images/Logo3.png"
+					height="125px">
+			</div>
+			<div class="col-md-1" style="display: inline-block; vertical-align: middle; float: none;">
+				<label style="color:white;">${sessionScope.userName}</label>
 			</div>
 		</div>
 		<br> <br>
@@ -90,7 +93,7 @@
 												<tbody>
 													<c:forEach items="${jobListing.candidateDetails}"
 														var="candidate" varStatus="i" begin="0">
-														<tr>
+														<tr class = ${candidate.colorClass}>
 															<td>${candidate.applicationStatus}</td>
 															<td>${candidate.email}</td>
 															<td>
@@ -143,26 +146,6 @@
 								</div>
 
 								<br> <br>
-
-								<div class="row">
-									<div class="col-md-12">
-
-										<h3>Max score is:</h3>
-										<p id="maxScore">89</p>
-
-									</div>
-
-								</div>
-
-								<div class="row">
-									<div class="col-md-12">
-
-										<h3>Avg score is:</h3>
-										<p id="avgScore">75</p>
-
-									</div>
-
-								</div>
 
 							</div>
 						</div>

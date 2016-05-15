@@ -18,10 +18,14 @@
 <body>
 
 	<div class="container-fluid">
-		<div class="row" style="background: -webkit-linear-gradient(left, #cccccc, #ebebe0, #000000);">
-			<div class="col-md-12">
-				<img alt="Bootstrap Image Preview"
-					src="images/Logo3.png" height="125px">
+		<div class="row"
+			style="background: -webkit-linear-gradient(left, #cccccc, #ebebe0, #000000);">
+			<div class="col-md-10" style="display: inline-block; vertical-align: middle; float: none;">
+				<img alt="Bootstrap Image Preview" src="images/Logo3.png"
+					height="125px">
+			</div>
+			<div class="col-md-1" style="display: inline-block; vertical-align: middle; float: none;">
+				<label style="color:white;">${sessionScope.userName}</label>
 			</div>
 		</div>
 
@@ -31,9 +35,10 @@
 			<div class="col-md-12">
 				<div class="tabbable" id="tabs-769811">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#panel-912557" data-toggle="tab">Section
-								1</a></li>
-						<li><a href="#panel-244497" data-toggle="tab">Section 2</a></li>
+						<li class="active"><a href="#panel-912557" data-toggle="tab">Apply
+								for a position</a></li>
+						<li><a href="#panel-244497" data-toggle="tab">Application
+								Status</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="panel-912557">
@@ -43,18 +48,18 @@
 								<div class="row">
 									<div class="col-md-12">
 
-										<form role="form">
+										<form method="POST" enctype="multipart/form-data" action="upload.html">
 
 											<div class="form-group">
 
-												<label for="InputJobId"> Job id </label> 
-												<input type="text" class="form-control" id="InputJobId" style="width:250px;" />
+												<label for="InputJobId"> Job id </label> <input type="text"
+													class="form-control" id="InputJobId" style="width: 250px;" />
 											</div>
 
 											<div class="form-group">
 
 												<label for="exampleInputFile">Resume</label> <input
-													type="file" id="exampleInputFile" />
+													type="file" id="exampleInputFile" name="exampleInputFile"/>
 
 											</div>
 											<button type="submit" class="btn btn-default">
@@ -66,21 +71,17 @@
 						</div>
 						<div class="tab-pane" id="panel-244497">
 
-							<br> <br> 
-							
+							<br> <br>
+
 							<div class="row">
-							<div class="col-md-12">
-							
-							<h2>
-				Your application status is:
-			</h2>
-			<p id="appStatus">
-				Invited for interview.
-			</p>
-							
+								<div class="col-md-12">
+
+									<h2>Your application status is:</h2>
+									<p id="appStatus">Invited for interview.</p>
+
+								</div>
 							</div>
-							</div>
-							
+
 						</div>
 					</div>
 				</div>

@@ -21,6 +21,8 @@ public class LoginController {
 		String emailID = request.getParameter("inputEmail3");
 		String accountType = request.getParameter("inputAccountType");
 
+		request.getSession().setAttribute("userName", emailID);
+		
 		loginDetails.setEmail(emailID);
 		loginDetails.setAccountType(accountType);
 

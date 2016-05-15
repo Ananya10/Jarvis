@@ -32,13 +32,13 @@ public class Test {
 		//ResumeAnalysis resumeAnalysis = new ResumeAnalysis();
 		//String response = resumeAnalysis.EntityExtraction("C:\\Hackathon\\SampleResume\\Resume.pdf");
 		
-		//TestAnalysis testAnalysis = new TestAnalysis();
+		TestAnalysis testAnalysis = new TestAnalysis();
 		//String response = testAnalysis.Train("C:\\Hackathon\\SampleTrainingData\\Training4.json");
 		
-		//String response = testAnalysis.Predict("C:\\Hackathon\\SampleTrainingData\\Predict.json","PredictionTest13");
+		String response = testAnalysis.Predict("C:\\Hackathon\\SampleTrainingData\\Predict.json","PredictionTest13");
 		
-		FeedbackAnalysis feedbackAnalysis = new FeedbackAnalysis();
-		String response = feedbackAnalysis.OCR("C:\\Hackathon\\Feedback1.jpg");
+		//FeedbackAnalysis feedbackAnalysis = new FeedbackAnalysis();
+		//String response = feedbackAnalysis.OCR("C:\\Hackathon\\Feedback1.jpg");
 		
 		System.out.println(response);
 
